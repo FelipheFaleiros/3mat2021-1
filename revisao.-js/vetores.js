@@ -48,5 +48,5 @@ frutas.splice(2,0,'caqui', 'jaca')
 console.log (frutas)
 
 //Subistituindo 6ª fruta
-frutas.splice(5,1, 'abacate')
+frutas.splice(5, 1, 'abacate')
 console.log(frutas)
