@@ -88,4 +88,5 @@ frutas.forEach(function(elemento) {
 })
 
 //forEach() utilizando arrow function como parâmetro
+//teste001
 frutas.forEach(elemento => console.log(elemento))
