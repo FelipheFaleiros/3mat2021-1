@@ -74,11 +74,11 @@ console.log('-------------')
 for (let atrib in veiculo){
     console.log(atrib + ' -> ' + veiculo[atrib])
 }
-
 //Objeto veiculo antes da exclusão da propriedade 
 console.table(veiculo)
 
 //Apagar uma propriedade de um objeto : delete
 delete veiculo.ano
+
 //Objeto veiculo depois da exclusão da propriedade
 console.table(veiculo)
