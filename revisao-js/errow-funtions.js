@@ -31,8 +31,34 @@ console.log(potencia2(2, 10))
  // Função sem parâmentros, que retorna um número aleatório entre 1 e 60
  function megasena(){
     // Math.random() -> retoena um número aleatório entre 0 (inclusive) e 1 (exclusive)
-    return Math.random() * 60
+    // * 60 -> Ajusta faixa de valores para entre 0 e 59
+    // + 1  -> Ajusta a faixa de valores para entre 1 e 60
+    // Math.ceil() -> retira as casas decimais de um número, deixando apenas
+    // a parte inteira
+    return Math.ceil(Math.random() * 60 + 1)
  }
 console.log(megasena(),megasena(),megasena(),megasena(),megasena(),megasena())
 
+ // Os parênteses vazios (obrigatórios) marcam o lugar dos parâmetros 
+ let megasena2 = () => Math.ceil(Math.random() * 60 + 1)
+ console.log(megasena(),megasena(),megasena(),megasena(),megasena(),megasena())
 
+function somaVet(vet) {
+    let soma = 0 
+    for(let n of vet) soma += n
+    return soma
+}
+console.log(somaVet([1,2,3,4,5,6,7,8,9]))
+
+//Com mais de uma linha no corpo, as chaves voltam a não ser mais 
+//possível omitir a palavra-chave *return* caso a função retorne valor
+const somaVet2 = vet => {
+    let soma = 0 
+    for(let n of vet) soma += n
+    return soma
+}
+console.log(somaVet2([1,2,3,4,5,6,7,8,9]))
+
+//CONCLUSÃO: arrow functions são ideias para casos em que o corpo da função 
+//possui apenas uma linha, embora arrow funtions com múltiplas linhas
+//não sejam incomuns.

@@ -2,22 +2,19 @@
  * Busca Sequencial 
  * 
  * Percorre a sequência de dados no inicio 
- * cada um deles contra 
+ * cada um deles contra o valor de busca
  * 
+ * Quando encontrar o valor de busca, o percurso é interrompido 
+ * e retorna-se a POSIÇÃO onde foi encontrado o valor de busca
+ *
+ *  Caso o valor de busca não tenha sido encontrado após o percurso
+ * total da sequência de dados , retorna-se o valor convencional -1
+ * pra indicar a indexistência do valor de busca entre os dados
  * 
+ * A busca sequencial NÂO EXIGE que a sequência de dados esteja 
+ * previamente ordenada
  * 
- * 
- * 
- * 
- * quando encontra o valor de busca, o percurso é interrompido 
-*e retorna-se a POSIÇÃO  onde foi encontrado o valor de busca
-*
-*Caso o valor de busca não tenha sido encontrado após o percurso 
-*total da sequência de dados , retorna-se o valor convencional -1
-*pra indicar a indexistência do valor de busca entre os dados
-*
-*a busca sequencial NÂO EXISTE
-*/
+ */
 
 function buscaSequencial (vetor, valorBusca){
     //Percurso com for tradicional 
