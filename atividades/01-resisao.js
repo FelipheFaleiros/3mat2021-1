@@ -152,7 +152,6 @@ nomesUf.splice(1, 0, 'Rio Grande do Norte')
 // Paraíba => com splice(), antes de RN
 nomesUf.splice(2, 0, 'Paraíba')
 
-// Pernambuco => com splice(), antes de SE
 nomesUf.splice(3, 0, 'Pernambuco')
 
 nomesUf.splice(1, 0, 'Ceará')
