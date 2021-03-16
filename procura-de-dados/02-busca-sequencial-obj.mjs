@@ -48,4 +48,7 @@ console.time("Busca group_name MARIA")
 console.log(buscaSequencial(objNomes, obj => obj.group_name == "MARIA"));
 console.timeEnd("Busca group_name MARIA")
 
+ console.time('Buscando nome ODHAIR')
+ console.log(buscaSequencial(objNomes, obj => obj.first_name == 'ODHAIR'))
+ console.timeEnd('Buscando nome ODHAIR')
 
