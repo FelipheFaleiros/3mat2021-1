@@ -48,10 +48,20 @@ console.log("Depois:",nums)
 console.log({totTrocas,comps,pass})
 */
 
+/*
 import {empresas} from "../includes/15-mil-empresas.mjs"
 console.log("Antes:",empresas)
 console.time("Ordenando Empresas...")
 bubbleSort(empresas)
 console.timeEnd("Ordenando Empresas...")
 console.log("Depois:",empresas)
+console.log({totTrocas,comps,pass})
+*/
+
+import { nomes } from "../includes/100-mil-nomes.mjs"
+console.log("Antes:", nomes)
+console.time("Ordenando Nomes...")
+bubbleSort(nomes)
+console.timeEnd("Ordenando Nomes...")
+console.log("Depois:", nomes)
 console.log({totTrocas,comps,pass})
