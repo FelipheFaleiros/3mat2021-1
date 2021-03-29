@@ -63,5 +63,6 @@ console.log("Antes:", nomes)
 console.time("Ordenando Nomes...")
 bubbleSort(nomes)
 console.timeEnd("Ordenando Nomes...")
+let memoria = process.memoryUsage().heapUsed / 1024 / 1024   //divide em 1024 para cair para Kili-byte e dpois por 1024 para cair para Mega-byte
 console.log("Depois:", nomes)
-console.log({totTrocas,comps,pass})
+console.log({totTrocas,comps,pass,memoria})

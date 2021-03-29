@@ -1,21 +1,12 @@
-/*
-
-    MERGE SORT
-
-    No processo de oedenação, esse algoritimo "desmonta" o vetor original contendo N elementos 
-    até obter N vetores de apenas um elemento cada um. Em seguida, usando a técnica de 
-    mesclagem(merge), "remonta" o vetor, dessa vez com os elementos já em ordem.
-
-*/
-
 let comps = 0, divisoes = 0, juncoes = 0
 
-function mergeSort(vetor) {
+function mergeSort(vetor, fncComp) {
 
     function mesclar(vetEsq, vetDir) {
         let pEsq = 0, pDir = 0, vetRes = []
         while(pEsq < vetEsq.length && pDir < vetDir.length) {
-            if(vetEsq[pEsq] < vetDir[pDir]) {
+            //if(vetEsq[pEsq] < vetDir[pDir]) {                   //Comparação
+            if(fncComp(vetDir[pDir], vetEsq[pEsq])) {                   //Comparação invertida 
                 vetRes.push(vetEsq[pEsq])
                 pEsq++
             }
@@ -48,8 +39,8 @@ return[...vetRes,...sobra] //Concatenando os dois vetores
             //console.log({vetEsq, vetDir})
 
             // Chamadas recursivas à própria função para continuar o processo de desmontagem
-            vetEsq = mergeSort(vetEsq)
-            vetDir = mergeSort(vetDir)
+            vetEsq = mergeSort(vetEsq, fncComp)
+            vetDir = mergeSort(vetDir, fncComp)
             
             let vetFinal = mesclar(vetEsq, vetDir)
             juncoes++
@@ -61,24 +52,14 @@ return[...vetRes,...sobra] //Concatenando os dois vetores
         }
         return vetor    //Condição de saída: vetor.length == 1
     }
-/*
-//let nums = [7, 4, 9, 0, 6, 1, 8, 2, 5, 3]
-//let nums = [9,8,7,6,5,4,3,2,1,0]
-//let nums = [0,2,1,3,5,4,6,8,7,9]
-let nums = [0,1,2,3,4,5,6,7,8,9]
-comps = 0, divisoes = 0, juncoes = 0
-let numsOrd = mergeSort(nums)
-console.log(numsOrd) 
-console.log({comps,divisoes,juncoes}) 
-*/
 
-import { nomes } from "../includes/100-mil-nomes.mjs"
-
-//console.log("Antes:", nomes)
+import {candidatos} from "../includes/candidatos-2018.mjs"
+ 
+//console.log("ANTES", candidatos)
 comps = 0, divisoes = 0, juncoes = 0
-console.time("Ordenando Nomes...")
-let nomesOrd = mergeSort(nomes)
-console.timeEnd("Ordenando Nomes...")
+console.time("Ordenar por nome de registro...")
+let candidatosOrd = mergeSort(candidatos,(a,b) => a.NM_CANDIDATO > b.NM_CANDIDATO)
+console.timeEnd("Ordenar por nome de registro...")
 let memoria = process.memoryUsage().heapUsed / 1024 / 1024   //divide em 1024 para cair para Kili-byte e dpois por 1024 para cair para Mega-byte
-console.log({comps,divisoes,juncoes,memoria}) 
-console.log("Depois:", nomesOrd)
+console.log({comps, divisoes, juncoes, memoria})
+console.log("DEPOIS: ", candidatosOrd)

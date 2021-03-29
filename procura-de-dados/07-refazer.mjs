@@ -52,5 +52,6 @@ console.log("Antes:", nomes)
 console.time("Ordenando Nomes...")
 selectionSort(nomes)
 console.timeEnd("Ordenando Nomes...")
-console.log({trocas,comps,pass})
+let memoria = process.memoryUsage().heapUsed / 1024 / 1024   //divide em 1024 para cair para Kili-byte e dpois por 1024 para cair para Mega-byte
+console.log({trocas,comps,pass,memoria})
 console.log("Depois:", nomes)
