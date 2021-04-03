@@ -48,7 +48,8 @@ console.log({trocas,pass,comps})
 
 
 import { nomes } from "../includes/100-mil-nomes.mjs"
-console.log("Antes:", nomes)
+
+//console.log("Antes:", nomes)
 console.time("Ordenando Nomes...")
 selectionSort(nomes)
 console.timeEnd("Ordenando Nomes...")
