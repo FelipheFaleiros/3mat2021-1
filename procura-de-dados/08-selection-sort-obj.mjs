@@ -8,7 +8,7 @@ function selectionSort(vetor, fnComp) {
         for(let j = inicio + 1; j < vetor.length; j++) {
             //if(vetor[j] < vetor[menor]) menor = j
             //Parâmetro passados em ordem inversa para fnComp
-            if(fnComp(vetor[Menor], vetor[j])) menor = j
+            if(fnComp(vetor[menor], vetor[j])) menor = j
             comps++
         }
         return menor
@@ -34,6 +34,6 @@ import {candidatos} from "../includes/candidatos-2018.mjs"
 console.log("ANTES", candidatos)
 console.time("Ordenar por nome de registro...")
 selectionSort(candidatos,(a,b) => a.NM_CANDIDATO > b.NM_CANDIDATO)
-console.timeEnd("Ordenar por nome de registro...")
 console.log("DEPOIS: ", candidatos)
-console.log({totTrocas, comps, pass})
+console.timeEnd("Ordenar por nome de registro...")
+console.log({trocas, comps, pass})
