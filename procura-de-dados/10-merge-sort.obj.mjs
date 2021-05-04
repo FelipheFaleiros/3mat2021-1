@@ -21,9 +21,9 @@ function mergeSort(vetor, fncComp) {
         if(pEsq < pDir) sobra = vetEsq.slice(pEsq)      // Sobra à esquerda
         else sobra = vetDir.slice(pDir)                 // Sobra à direita
 
-//O vetor retornado será formado pelo vetor resultado + sobra 
-return[...vetRes,...sobra] //Concatenando os dois vetores
-}
+        //O vetor retornado será formado pelo vetor resultado + sobra 
+        return[...vetRes,...sobra] //Concatenando os dois vetores
+    }
 
         //Desmonte o vetor
         if(vetor.length > 1) {  // Para desmontar, são necessários pelo menos 2 elementos
@@ -51,7 +51,7 @@ return[...vetRes,...sobra] //Concatenando os dois vetores
 
         }
         return vetor    //Condição de saída: vetor.length == 1
-    }
+}
 
 import {candidatos} from "../includes/candidatos-2018.mjs"
  
